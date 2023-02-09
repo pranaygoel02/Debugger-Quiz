@@ -1,4 +1,6 @@
 import React,{useContext,useState,useEffect} from 'react'
+// import { questionSet } from '../assets/questions/question'
+import questionSet from '../assets/questions/Prelims (1).json'
 
 const ExamContext = React.createContext()
 
@@ -8,6 +10,7 @@ export const useExam = () => {
 
 
 export const ExamProvider = ({children}) => {
+
     const [marks,setMarks] = useState(0)
     const [timer,setTimer] = useState(false)
     const [attempted,setAttempted] = useState([])
@@ -15,11 +18,28 @@ export const ExamProvider = ({children}) => {
     const [correct,setCorrect] = useState([])
     const [unattempted,setUnattempted] = useState([])
     const [result,setResult] = useState(false)
-    
-    const timeLimit = 1800000
+    const [questions,setQuestions] = useState(questionSet)
+    const [timeLimit,setTimeLimit] = useState(120000)
+
+    function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+        return array
+    }
+
+    useEffect(() => {
+        setQuestions(shuffleArray(questionSet.map(item => {
+            return {
+                ...item,
+                options: shuffleArray(item.options)
+            }
+        })))
+    },[questionSet])
     
     const value = {
-        marks,setMarks,timer,setTimer,timeLimit,attempted,setAttempted, incorrect,setIncorrect,correct,setCorrect,unattempted,setUnattempted,result,setResult    
+        marks,setMarks,timer,setTimer,timeLimit,setTimeLimit,attempted,setAttempted, incorrect,setIncorrect,correct,setCorrect,unattempted,setUnattempted,result,setResult,questions
     }
 
     return (

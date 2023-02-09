@@ -1,7 +1,7 @@
-const questions = [
+const questionSet = [
     {
         id: 1,
-        question: "```js\n \
+        code: "```js\n \
         let arr = [10, 20, 30, 40];\n \
         \n \
         function modifyArray(arr) {\n \
@@ -19,22 +19,22 @@ const questions = [
     },
     {
         id: 2,
-        question: 'Heya',
+        code: 'Heya',
         options: ['A','B','C','D'],
-        answer: 1
+        answer: 'A'
     },
     {
         id: 3,
-        question: 'Heya',
+        code: 'Heya',
         options: ['A','B','C','D'],
-        answer: 2
+        answer: 'C'
     },
     {
         id: 4,
-        question: 'Heya',
+        code: 'Heya',
         options: ['A','B','C','D'],
-        answer: 4
+        answer: 'A'
     },
 ]
 
-export {questions}
+export {questionSet}
