@@ -1,6 +1,6 @@
 import React,{useContext,useState,useEffect} from 'react'
 // import { questionSet } from '../assets/questions/question'
-import questionSet from '../assets/questions/Prelims (1).json'
+import questionSet from '../assets/questions/Prelims (2).json'
 
 const ExamContext = React.createContext()
 
@@ -19,7 +19,7 @@ export const ExamProvider = ({children}) => {
     const [unattempted,setUnattempted] = useState([])
     const [result,setResult] = useState(false)
     const [questions,setQuestions] = useState(questionSet)
-    const [timeLimit,setTimeLimit] = useState(120000)
+    const [timeLimit,setTimeLimit] = useState(60000)
 
     function shuffleArray(array) {
         for (let i = array.length - 1; i > 0; i--) {

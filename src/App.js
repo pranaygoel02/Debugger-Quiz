@@ -12,7 +12,7 @@ function App() {
   return (
   <UserProvider>
     <ExamProvider>
-    <div className='h-screen w-screen font-manrope'>
+    <div className='h-auto md:h-screen w-screen font-manrope'>
       <Router>
         <Routes>
           <Route path="" element={<Redirect/>}/>

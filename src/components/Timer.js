@@ -4,7 +4,8 @@ import { useExam } from '../context/examContext'
 function Timer({submitQuiz}) {
     const {timeLimit,timer,setTimer,setTimeLimit} = useExam()
     useEffect(() => {
-        if(timeLimit <= 0){
+        // console.log(timeLimit,timer);
+        if(!timer || timeLimit <= 0){
             setTimer(false)
             submitQuiz()
         }

@@ -17,8 +17,8 @@ function Rules() {
                 + currentdate.getHours() + ":"  
                 + currentdate.getMinutes() + ":" 
                 + currentdate.getSeconds();
-    console.log(datetime)
-    if( currentdate.getDate() === 26 && currentdate.getMonth() === 0 && currentdate.getFullYear() === 2023 && currentdate.getHours() === 18 && currentdate.getMinutes() >= 0 && currentdate.getSeconds() >= 0){
+    // console.log(datetime)
+    if( currentdate.getDate() === 15 && currentdate.getMonth() === 1 && currentdate.getFullYear() === 2023 && currentdate.getHours() === 14 && currentdate.getMinutes() >= 0 && currentdate.getSeconds() >= 0){
       return true
     }
     return true
@@ -33,13 +33,15 @@ function Rules() {
   },[])
 
   const handleStartTest = () => {
-    if(checkDateTime()){
-    console.log('start test')
+    // if(checkDateTime()){
+    // // console.log('start test')
+    // setTimer(true)
+    // navigate('/exam')
+    // }else{
+      //   alert('Quiz has not yet started.')
+      // }
     setTimer(true)
     navigate('/exam')
-    }else{
-      alert('Quiz has not yet started.')
-    }
   }
 
   return (
@@ -50,12 +52,12 @@ function Rules() {
         <div className='flex flex-col items-start text-start gap-8'>
           <h2 className='text-4xl font-bold text-blue-600 uppercase'>Rules</h2>
           <ul>
-            {rules.map(rule => <li>{rule}</li>)}
+            {rules.map((rule,index) => <li key={index}>{rule}</li>)}
           </ul>
         </div>
         <div className='flex gap-1'>
           <input type={'checkbox'} name='check-rules' onChange={(e) => {
-            console.log(e.target.checked);
+            // console.log(e.target.checked);
             setChecked(e.target.checked)
             }}/>
           <label htmlFor='check-rules'>I have read all rules, and agree to it.</label>

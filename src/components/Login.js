@@ -11,7 +11,7 @@ function Login() {
     const {questions} = useExam()
     
     useEffect(()=>{
-        console.log(user);
+        // console.log(user);
         questions.forEach(item => delete(item.chosenAns))
         if(user === null || user === 'null') return
         else {
@@ -40,8 +40,8 @@ function Login() {
         <h1 className='bg-white p-8 rounded border  text-center text-lg'><span className='text-5xl text-blue-600 font-bold uppercase tracking-wide'>Prelims Round</span></h1>
         <form className='flex flex-col gap-2 text-lg bg-white p-4 rounded' onSubmit={handleSubmit}>
             <div className='flex flex-col gap-2'>
-                <label htmlFor='temId'>Enter Team Id</label>
-                <input type={'text'} value={teamId} placeholder='Enter your team Id' className='bg-gray-200 p-2' onChange={(e)=>setTeamId(e.target.value)}/>
+                <label className='text-center' htmlFor='temId'>Enter Team Leader Name</label>
+                <input type={'text'} value={teamId} placeholder='Enter your team leader name' className='bg-gray-200 p-2 text-center focus:outline-none' onChange={(e)=>setTeamId(e.target.value)}/>
             </div>
             <button className='p-2 rounded bg-blue-600 text-white' onSubmit={handleSubmit} type='submit'>Submit</button>
         </form>

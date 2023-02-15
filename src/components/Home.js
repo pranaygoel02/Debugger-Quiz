@@ -11,6 +11,9 @@ import SubmitModal from './SubmitModal'
 import QuestionList from './QuestionList'
 import Timer from './Timer'
 
+import BookmarkOutline from '../assets/images/bookmark_outline.png'
+import Bookmark from '../assets/images/bookmark.png'
+
 function Home() {
     const {user,setUser} = useUser()
     const {setAttempted, attempted, setMarks, setIncorrect,setCorrect,setUnattempted,result,questions,timeLimit,timer} = useExam()
@@ -94,6 +97,14 @@ function Home() {
         }
     }
 
+    const setBookmark = () => {
+        if(questions[id].bookmark === true){
+            questions[id].bookmark = false
+        }else{
+            questions[id].bookmark = true
+        }
+    }
+
     const handleSubmitNext = () => {
         setAnswer()
         
@@ -128,7 +139,7 @@ function Home() {
         let correct = []
         let incorrect = []
         questions.forEach((item,index) => {
-            if(item.chosenAns === item.answer){
+            if(item.chosenAns === item.answer.trim()){
                 marks += 4
                 attempted = [...attempted,item]
                 correct = [...correct,item]
@@ -148,6 +159,8 @@ function Home() {
         setUnattempted(unattempted)
         setCorrect(correct)
         setIncorrect(incorrect)
+        sessionStorage.setItem(`Debugger TeamId- ${user}`,JSON.stringify({ marks, attempted, unattempted, correct, incorrect}))
+        localStorage.setItem(`Debugger TeamId- ${user}`,JSON.stringify({ marks, attempted, unattempted, correct, incorrect}))
         navigate('/result')
     }
 
@@ -167,7 +180,7 @@ function Home() {
     //   console.log(questions);
     return (
         user && 
-        <div className='flex flex-row w-full h-full relative'>
+        <div className='flex flex-col md:flex-row w-full h-full relative'>
             {showSubmitModal && 
             <div className='absolute z-10 top-0 left-0 w-full h-full bg-black/40 flex items-center justify-center'>
                 <SubmitModal closeModal={closeModal} submitQuiz={handleSubmitTest}/>
@@ -187,13 +200,20 @@ function Home() {
                 <img className='w-20 bg-white rounded-full p-2' src={Debugger}/>
                 </div>
                 <p className='text-xl'>Question: <span className='text-3xl font-bold'>{id + 1}</span>/{questions?.length}</p>
+                <h2>{questions[id].title}</h2>
                 <div id='question' className='select-none bg-white shadow-md text-black w-full p-4 max-h-96 overflow-auto rounded-lg'></div>
             </div>
             <div className='flex flex-col items-start w-full text-start justify-center gap-4 p-16' style={{flexBasis:'50%'}}>
-                <p>Choose an option</p>
+                <div className='flex w-full justify-between items-center'>
+                    <p>Choose an option</p>
+                    <button title='Bookmark Question' onClick={setBookmark} className='w-6'>
+                        <img src={questions[id]?.bookmark ? Bookmark : BookmarkOutline}/>
+                    </button>
+                </div>
                 <div className='flex flex-col items-stretch justify-start gap-4 w-full transition-all'>
                 {questions[id].options.map((option,index) => {
-                    return ( <label className={`rounded border w-full flex gap-2 p-4 hover:shadow-md hover:border-green-400 transition-all cursor-pointer ${option === questions[id]?.chosenAns && 'bg-green-500 text-white'}`}>
+                    return ( 
+                    <label key={index} className={`rounded border w-full flex gap-2 p-4 hover:shadow-md hover:border-green-400 transition-all cursor-pointer ${option === questions[id]?.chosenAns && 'bg-green-500 text-white'}`}>
                       <input onClick={setAnswer} type="radio" id={option} defaultChecked={option === questions[id]?.chosenAns} value={option} name="radio"/>
                       <p>{option}</p>
                     </label>)

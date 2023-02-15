@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useExam } from '../context/examContext'
 import Timer from './Timer'
 
