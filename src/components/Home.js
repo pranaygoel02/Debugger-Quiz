@@ -150,7 +150,7 @@ function Home() {
     let incorrect = [];
     questions.forEach((item, index) => {
       if (item.chosenAns === item.answer.trim()) {
-        marks += 4;
+        marks += 2;
         attempted = [...attempted, item];
         correct = [...correct, item];
       } else if (item.chosenAns === undefined) {
@@ -212,7 +212,7 @@ function Home() {
           className="flex flex-col gap-8 items-start p-16 bg-blue-800 text-white"
           style={{ flexBasis: "50%" }}
         >
-          <p>Team Id: {user}</p>
+          <p>Team Leader: {user}</p>
           <div className="flex gap-4">
             <div className="w-20 flex items-center bg-white rounded-full">
               <img className="w-full" src={Ureckon} />

@@ -41,15 +41,16 @@ function Submission() {
             </div>
             <img className='w-28 bg-white rounded-full p-2' src={Debugger}/>
         </div>
-        <h1 className='bg-white p-4 rounded border  text-center text-xl'><span className='text-5xl text-blue-600 font-bold uppercase tracking-wide'>Submission</span><br></br>Team Id: {user}</h1>
+        <h1 className='bg-white p-4 rounded border  text-center text-xl'><span className='text-5xl text-blue-600 font-bold uppercase tracking-wide'>Submission</span><br></br>Team Leader: {user}</h1>
         <div className='flex justify-between gap-2 flex-wrap text-lg'>
         <p className='p-4 rounded border text-center bg-orange-600 text-white' style={{flexBasis:'48.5%'}}>Attempted: {attempted.length}</p>
         {/* <p className='p-4 rounded border text-center bg-green-600 text-white' style={{flexBasis:'49%'}}>Correct: {correct.length}</p> */}
         {/* <p className='p-4 rounded border text-center bg-red-600 text-white' style={{flexBasis:'49%'}}>Incorrect: {incorrect.length}</p> */}
         <p className='p-4 rounded border text-center bg-purple-600 text-white' style={{flexBasis:'48.5%'}}>Unattempted: {unattempted.length}</p>
-        {/* <p className='p-4 rounded border text-center border-blue-600' style={{flexBasis:'100%'}}>Overall Score: {marks} / {4*questions.length}</p> */}
+        <p className='p-4 rounded border text-center border-blue-600' style={{flexBasis:'100%'}}>Overall Score: {marks} / {2 * questions.length}</p>
         </div>
         <button className='p-4 text-lg rounded text-white bg-blue-600' onClick={finishTest}>Finish Round</button>
+        <p>Note: Please do not reload the web page or click the finish round button yourself. Once this screen appears call the coordinators.</p>
         </div>
     </div>
   )

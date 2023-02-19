@@ -37,7 +37,7 @@ function Login() {
             </div>
             <img className='w-28 bg-white rounded-full p-2' src={Debugger}/>
         </div>
-        <h1 className='bg-white p-8 rounded border  text-center text-lg'><span className='text-5xl text-blue-600 font-bold uppercase tracking-wide'>Prelims Round</span></h1>
+        <h1 className='bg-white p-8 rounded border  text-center text-lg'><span className='text-5xl text-blue-600 font-bold uppercase tracking-wide'>Finals Round</span></h1>
         <form className='flex flex-col gap-2 text-lg bg-white p-4 rounded' onSubmit={handleSubmit}>
             <div className='flex flex-col gap-2'>
                 <label className='text-center' htmlFor='temId'>Enter Team Leader Name</label>

@@ -17,7 +17,7 @@ export const ExamProvider = ({ children }) => {
   const [unattempted, setUnattempted] = useState([]);
   const [result, setResult] = useState(false);
   const [questions, setQuestions] = useState(questionSet);
-  const [timeLimit, setTimeLimit] = useState(2400000);
+  const [timeLimit, setTimeLimit] = useState(30 * 60 * 1000);
 
   function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -33,7 +33,7 @@ export const ExamProvider = ({ children }) => {
         questionSet.map((item) => {
           return {
             ...item,
-            options: shuffleArray(item.options),
+            options: item.options,
           };
         })
       )

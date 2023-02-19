@@ -1,8 +1,8 @@
 export const rules = [
-  "The prelims round will be a MCQ based round.",
-  "Total Time Duration: 40 minutes",
-  "Total Questions: 35",
-  "For each correct answer, 4 marks will be awarded.",
+  "The finals round will be a MCQ based round.",
+  "Total Time Duration: 30 minutes",
+  "Total Questions: 40",
+  "For each correct answer, 2 marks will be awarded.",
   "For each incorrect answer, 1 mark will be deducted.",
   "For each unattempted question, 0 marks will be awarded.",
   "The test will be automatically submitted after 40 minutes.",
