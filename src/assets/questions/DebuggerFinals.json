@@ -1,0 +1,482 @@
+[
+    {
+        "_id": "63ee085df43c2ebf2cd63290",
+        "title": "What is the output of the code snippet?",
+        "code": "```\n\nclass TestA:\n    def method(self):\n        print(\"A\")\n\nclass TestB:\n    def method(self):\n        print(\"B\")\n\nclass TestC(TestB, TestA):\n    pass\n\ntestObj = TestC()\ntestObj.method()\n```",
+        "answer": "\"B\"",
+        "options": [
+            "\"A\"",
+            "\"B\"",
+            "An AttributeError is raised",
+            "Nothing / blank"
+        ],
+        "round": "63ec8e5b17ddbe8bf8ec7065",
+        "createdAt": "2023-02-16T10:41:33.669Z",
+        "updatedAt": "2023-02-16T22:23:42.685Z",
+        "__v": 0
+    },
+    {
+        "_id": "63ee0902f43c2ebf2cd63292",
+        "title": "What is the purpose of the \"auto\" keyword in this code snippet?",
+        "code": "```\n#include <iostream>\n#include <vector>\n#include <algorithm>\n\nusing namespace std;\n\nint main() {\n    vector<int> v = {1, 2, 3, 4, 5};\n    auto f = [](int i) { return i > 2; };\n    int x = count_if(v.begin(), v.end(), [&, f](int i) mutable { v[0] = 100; return f(i); });\n    cout << \"x: \" << x << endl;\n    cout << \"v[0]: \" << v[0] << endl;\n    return 0;\n}\n```",
+        "answer": "It specifies the return type of the lambda function",
+        "options": [
+            "It declares an integer variable that is automatically assigned a value",
+            "It is not necessary in this code snippet",
+            "It specifies the return type of the lambda function",
+            "It is used to declare an array of automatic storage duration"
+        ],
+        "round": "63ec8e5b17ddbe8bf8ec7065",
+        "createdAt": "2023-02-16T10:44:18.810Z",
+        "updatedAt": "2023-02-16T10:44:18.810Z",
+        "__v": 0
+    },
+    {
+        "_id": "63ee09a70460306be0e0807f",
+        "title": "What is the output of the code?",
+        "code": "```\nimport java.util.*;\n\npublic class Test {\n    public static void main(String[] args) {\n        int[] arr = {1, 2, 3, 4, 5, 6};\n        List<Integer> list = new ArrayList<Integer>();\n        for (int i = 0; i < arr.length - 3; i++) {\n            if (i % 2 == 0) {\n                list.add(arr[i]);\n            }\n        }\n        int[] new_arr = new int[list.size()];\n        for (int i = 0; i < new_arr.length; i++) {\n            new_arr[i] = list.get(i);\n        }\n        System.out.println(Arrays.toString(new_arr));\n    }\n}\n```",
+        "answer": "[1,3]",
+        "options": [
+            "[1, 5]",
+            "[1, 2, 3]",
+            "[1,3]",
+            "[1, 2, 3, 4, 5, 6]"
+        ],
+        "round": "63ec8e5b17ddbe8bf8ec7065",
+        "createdAt": "2023-02-16T10:47:03.770Z",
+        "updatedAt": "2023-02-16T10:47:03.770Z",
+        "__v": 0
+    },
+    {
+        "_id": "63ee0b070460306be0e08083",
+        "title": "What will be the output of the above code ?",
+        "code": "```\nclass MyClass {\n    private int num;\n\n    public MyClass(int n) {\n        num = n;\n    }\n\n    public void setNum(int n) {\n        num = n;\n    }\n\n    public int getNum() {\n        return num;\n    }\n}\n\npublic class Main {\n    public static void main(String[] args) {\n        MyClass obj1 = new MyClass(5);\n        MyClass obj2 = obj1;\n        obj1.setNum(10);\n        System.out.println(obj2.getNum());\n    }\n}\n```",
+        "answer": "10",
+        "options": [
+            "5",
+            "10",
+            "Runtime error",
+            "Compile time error"
+        ],
+        "round": "63ec8e5b17ddbe8bf8ec7065",
+        "createdAt": "2023-02-16T10:52:55.776Z",
+        "updatedAt": "2023-02-16T10:52:55.776Z",
+        "__v": 0
+    },
+    {
+        "_id": "63ee0daa3c29750a9471ab1e",
+        "title": "What will be the output of the above code ?",
+        "code": "```\nclass Test {\n    public static void main(String[] args) {\n        int[][] x = { { 1, 2 }, { 3, 4, 5 }, { 6, 7, 8 } };\n        int[][] y = new int[3][];\n        for (int i = 0; i < x.length; i++) {\n            y[i] = new int[x[i].length];\n            for (int j = 0; j < x[i].length; j++) {\n                y[i][j] = x[i][j];\n            }\n        }\n        for (int i = 0; i < y.length; i++) {\n            for (int j = 0; j < y[i].length; j++) {\n                if (i == 1 && j == 1) {\n                    x[i][j] = 0;\n                }\n            }\n        }\n        int z = 0;\n        try {\n            z = y[2][x[1].length];\n        } catch (ArrayIndexOutOfBoundsException e) {\n            System.out.println(\"Array index out of bounds: \" + e.getMessage());\n            return;\n        } catch (Exception e) {\n            System.out.println(\"Exception: \" + e.getMessage());\n            return;\n        }\n        System.out.println(z);\n    }\n}\n```",
+        "answer": "Array index out of bounds",
+        "options": [
+            "7",
+            "Compile time error",
+            "0",
+            "Array index out of bounds"
+        ],
+        "round": "63ec8e5b17ddbe8bf8ec7065",
+        "createdAt": "2023-02-16T11:04:10.271Z",
+        "updatedAt": "2023-02-16T11:04:10.271Z",
+        "__v": 0
+    },
+    {
+        "_id": "63ee1cc8fdfbeb7f6f498ed3",
+        "title": "What is the output of the following code ?",
+        "code": "```\ndef merge_sort(numbers):\n    if len(numbers) <= 1:\n        return numbers\n    middle = len(numbers) // 2\n    left_list = numbers[:middle]\n    right_list = numbers[middle:]\n    left_list = merge_sort(left_list)\n    right_list = merge_sort(right_list)\n    return sorted(left_list + right_list)\n\nnumbers = [5, 10, 3, 8, 6, 1, 7, 2, 4, 9]\nsorted_numbers = merge_sort(numbers)\nprint(\"Sorted numbers:\", sorted_numbers)\n```",
+        "answer": "The output is a sorted list of the numbers [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], and the time complexity of merge sort is O(n log n)",
+        "options": [
+            "The output is a sorted list of the numbers [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], and the time complexity of merge sort is O(n log n)",
+            "The output is a sorted list of the numbers [5, 10, 3, 8, 6, 1, 7, 2, 4, 9], and the time complexity of merge sort is O(n^2)",
+            "The output is a sorted list of the numbers [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], and the time complexity of merge sort is O(n^2)",
+            "The output is a sorted list of the numbers [5, 10, 3, 8, 6, 1, 7, 2, 4, 9], and the time complexity of merge sort is O(n log n)"
+        ],
+        "round": "63ec8e5b17ddbe8bf8ec7065",
+        "createdAt": "2023-02-16T12:08:40.524Z",
+        "updatedAt": "2023-02-16T12:08:40.524Z",
+        "__v": 0
+    },
+    {
+        "_id": "63ee3c560936a627e740dc9d",
+        "title": "Which of the following best describes the issue in the code?",
+        "code": "```\npublic class Employee {\n    private String name;\n    private int age;\n    private double salary;\n\n    public Employee(String name, int age, double salary) {\n        name = name;\n        age = age;\n        salary = salary;\n    }\n\n    public String getName() {\n        return name;\n    }\n\n    public int getAge() {\n        return age;\n    }\n\n    public double getSalary() {\n        return salary;\n    }\n\n    public static void main(String[] args) {\n        Employee e = new Employee(\"John Doe\", 25, 50000.00);\n        System.out.println(\"Name: \" + e.getName());\n        System.out.println(\"Age: \" + e.getAge());\n        System.out.println(\"Salary: \" + e.getSalary());\n    }\n}\n```",
+        "answer": "The getters are not properly returning the values of the name, age, and salary fields",
+        "options": [
+            "The constructor is not properly setting the values of the name, age, and salary fields",
+            "The getters are not properly returning the values of the name, age, and salary fields",
+            "The main method is not properly creating an instance of the Employee class",
+            "There is no issue in the code"
+        ],
+        "round": "63ec8e5b17ddbe8bf8ec7065",
+        "createdAt": "2023-02-16T14:23:18.487Z",
+        "updatedAt": "2023-02-16T14:23:18.487Z",
+        "__v": 0
+    },
+    {
+        "_id": "63ee49be908e8a43b556ca5c",
+        "title": "What is the output of this code? ",
+        "code": "```\nimport java.util.ArrayList;\nimport java.util.List;\n\npublic class Test {\n    public static void main(String[] args) {\n        List<Integer> list1 = new ArrayList<Integer>();\n        list1.add(1);\n        list1.add(2);\n        list1.add(3);\n        \n        List<Integer> list2 = new ArrayList<Integer>();\n        list2.add(3);\n        list2.add(4);\n        list2.add(5);\n        \n        list1.retainAll(list2);\n        \n        System.out.println(list1);\n    }\n}\n```",
+        "answer": "[3]",
+        "options": [
+            "[3]",
+            "[1, 2, 3, 3, 4, 5]",
+            "[1, 2]",
+            "An exception is thrown"
+        ],
+        "round": "63ec8e5b17ddbe8bf8ec7065",
+        "createdAt": "2023-02-16T15:20:30.514Z",
+        "updatedAt": "2023-02-16T15:20:30.514Z",
+        "__v": 0
+    },
+    {
+        "_id": "63ee7af6cb3336d518e7f631",
+        "title": "What will be the output of the following code?",
+        "code": "```\nconst variable1 = [1, 2, 3, 4, 5];\nconst variable2 = variable1;\nconst variable3 = variable1.slice();\nvariable1.push(6);\nconsole.log(variable2.length + variable3.length);\n```",
+        "answer": "A) 11",
+        "options": [
+            "11",
+            "9",
+            "6",
+            "None of the above"
+        ],
+        "round": "63ec8e5b17ddbe8bf8ec7065",
+        "createdAt": "2023-02-16T18:50:30.308Z",
+        "updatedAt": "2023-02-16T20:09:23.822Z",
+        "__v": 0
+    },
+    {
+        "_id": "63ee906e8551f375cfc68960",
+        "title": "What will be the output of the following code?",
+        "code": "```\nconst listOfNumbers = [4, 5, 6, 8, 7];\nfor (var num = 0; num < listOfNumbers.length; num++) {\n  setTimeout(() => console.log(listOfNumbers[num]), 1000);\n}\n```",
+        "answer": "undefined undefined undefined undefined undefined",
+        "options": [
+            "1 2 3 4 5",
+            "undefined undefined undefined undefined undefined",
+            "TypeError: Cannot read property 'x' of undefined",
+            "ReferenceError: i is not defined"
+        ],
+        "round": "63ec8e5b17ddbe8bf8ec7065",
+        "createdAt": "2023-02-16T20:22:06.542Z",
+        "updatedAt": "2023-02-16T20:22:06.542Z",
+        "__v": 0
+    },
+    {
+        "_id": "63ee9265ca0a3fa586fa54c6",
+        "title": "What will be the output of the following code?",
+        "code": "```\nconst array = [2, 3, 4, 5, 6];\nconst modifiedArray = array.map(function(eachVal) {\n  console.log(eachVal);\n  return eachVal * 2;\n});\nconsole.log(array);\n```",
+        "answer": "2 3 4 5 6 [ 2, 3, 4, 5, 6 ]",
+        "options": [
+            "2 3 4 5 6 [ 2, 3, 4, 5, 6 ]",
+            "[1, 2, 3, 4, 5]",
+            "[2, 4, 6, 8, 10]",
+            "4 6 8 10 12[ 2, 3, 4, 5, 6 ]"
+        ],
+        "round": "63ec8e5b17ddbe8bf8ec7065",
+        "createdAt": "2023-02-16T20:30:29.649Z",
+        "updatedAt": "2023-02-16T20:30:46.860Z",
+        "__v": 0
+    },
+    {
+        "_id": "63ee96e5175739eb5c40eff6",
+        "title": "What will be the output of the following code?",
+        "code": "```\nconst object1 = { message: \"Ureckon Rocks!!\" };\nconst copyObject1 = object1;\ncopyObject1.message = \"Debugger Rocks!!\";\nconsole.log(object1.message);\n```",
+        "answer": "Debugger Rocks!!",
+        "options": [
+            "Debugger Rocks!!",
+            "Ureckon Rocks!!",
+            "undefined",
+            "ReferenceError"
+        ],
+        "round": "63ec8e5b17ddbe8bf8ec7065",
+        "createdAt": "2023-02-16T20:49:41.198Z",
+        "updatedAt": "2023-02-16T20:49:41.198Z",
+        "__v": 0
+    },
+    {
+        "_id": "63ee9e2305a2508715c8b5cf",
+        "title": "What will be the output of the following C program?",
+        "code": "```\n#include <stdio.h>\nint main()\n{\n    int x_variable = 5;\n    printf(\"%d %d %d\", x_variable, x_variable++, ++x_variable);\n    return 0;\n}\n```",
+        "answer": "7 6 7",
+        "options": [
+            "6 6 7",
+            "6 5 7",
+            "5 6 7",
+            "7 6 7"
+        ],
+        "round": "63ec8e5b17ddbe8bf8ec7065",
+        "createdAt": "2023-02-16T21:20:35.156Z",
+        "updatedAt": "2023-02-16T21:20:35.156Z",
+        "__v": 0
+    },
+    {
+        "_id": "63eea324f08cb7bd06fab787",
+        "title": "What will be the output of the following program?",
+        "code": "```\n#include <stdio.h>\nint main()\n{\n    int num1 = 100, num2 = 200, num3 = 300;\n    int *pointer1 = &num1, *pointer2 = &num2, *pointer3 = &num3;\n    pointer1 = pointer2;\n    *pointer1 = *pointer3;\n    pointer3 = pointer2;\n    printf(\"%d %d %d\", num1, num2, num3);\n    return 0;\n}\n```",
+        "answer": "100 300 300",
+        "options": [
+            "100 300 300",
+            "100 300 200",
+            "300 200 300",
+            "300 300 200"
+        ],
+        "round": "63ec8e5b17ddbe8bf8ec7065",
+        "createdAt": "2023-02-16T21:41:56.195Z",
+        "updatedAt": "2023-02-16T21:41:56.195Z",
+        "__v": 0
+    },
+    {
+        "_id": "63eea562a53506c7c9176e6a",
+        "title": "What will be the output of the following code?",
+        "code": "```\nfirstArray = [1, 2, 3, 4, 5]\nsecondArray = [elem1 * elem2 for elem1 in firstArray if elem1 % 2 == 0 if elem1 > 2 for elem2 in range(elem1)]\nprint(secondArray)\n```",
+        "answer": "[0, 4, 8, 12]",
+        "options": [
+            "[0, 0, 1, 4, 9, 16]",
+            "[0, 1, 2, 3, 4, 9, 16]",
+            "[0, 4, 8, 12]",
+            "[1, 4, 9, 16]"
+        ],
+        "round": "63ec8e5b17ddbe8bf8ec7065",
+        "createdAt": "2023-02-16T21:51:30.337Z",
+        "updatedAt": "2023-02-16T21:51:30.337Z",
+        "__v": 0
+    },
+    {
+        "_id": "63eea70f144c1b6ba4a8238d",
+        "title": "What will be the output of the following Python code?",
+        "code": "```\ndef function1(arg1=0):\n    arg1 += 1\n    def function2(arg2):\n        return arg2 * arg1\n    return function2\n\nvariable1 = function1()\nvariable2 = function1()(variable1(2))\n\nprint(variable2)\n```",
+        "answer": "2",
+        "options": [
+            "6",
+            "3",
+            "4",
+            "2"
+        ],
+        "round": "63ec8e5b17ddbe8bf8ec7065",
+        "createdAt": "2023-02-16T21:58:39.311Z",
+        "updatedAt": "2023-02-16T21:58:39.311Z",
+        "__v": 0
+    },
+    {
+        "_id": "63eea98ecc1ea1ff8f07675c",
+        "title": "Consider the following code snippet and What will be the output when the main method of CustomClass is executed?",
+        "code": "```\ninterface CustomInterface {\n    void customMethod();\n}\n\nabstract class CustomAbstractClass implements CustomInterface {\n    public void customMethod() {\n        System.out.println(\"Hello, Debugger Participants!\");\n    }\n}\n\nclass CustomClass extends CustomAbstractClass {\n    public static void main(String[] args) {\n        CustomInterface newObject = new CustomClass();\n        newObject.customMethod();\n    }\n}\n```",
+        "answer": "Compilation error",
+        "options": [
+            "\"Hello, Debugger Participants!\"",
+            "Compilation error",
+            "Runtime error",
+            "None of the above"
+        ],
+        "round": "63ec8e5b17ddbe8bf8ec7065",
+        "createdAt": "2023-02-16T22:09:18.083Z",
+        "updatedAt": "2023-02-16T22:09:50.013Z",
+        "__v": 0
+    },
+    {
+        "_id": "63eeabfd442727b9c1ec99f1",
+        "title": "What is the output of the following code?",
+        "code": "```\ninterface TestInterface1 {\n    public void randomMethod();\n}\n\ninterface TestInterface2 {\n    public void randomMethod();\n}\n\nclass TestClass implements TestInterface1, TestInterface2 {\n    public void randomMethod() {\n        System.out.println(\"Debugger 4.0\");\n    }\n}\n\nclass MainClass {\n    public static void main(String[] args) {\n        TestClass testObject = new TestClass();\n        testObject.randomMethod();\n    }\n}\n```",
+        "answer": "Debugger 4.0",
+        "options": [
+            "Compilation Error",
+            "Debugger 4.0",
+            "Runtime error",
+            "None of the above"
+        ],
+        "round": "63ec8e5b17ddbe8bf8ec7065",
+        "createdAt": "2023-02-16T22:19:41.910Z",
+        "updatedAt": "2023-02-16T22:19:41.910Z",
+        "__v": 0
+    },
+    {
+        "_id": "63eeaf2b442727b9c1ec99f9",
+        "title": "What is the output of the following Java code?",
+        "code": "```\npublic class Test {\n    public static void main(String[] args) {\n        int varA = 0x7;\n        int varB = 0x1;\n        System.out.println(varA & varB);\n    }\n}\n```",
+        "answer": "1",
+        "options": [
+            "0x0",
+            "0x1",
+            "1",
+            "0"
+        ],
+        "round": "63ec8e5b17ddbe8bf8ec7065",
+        "createdAt": "2023-02-16T22:33:15.483Z",
+        "updatedAt": "2023-02-16T22:33:15.483Z",
+        "__v": 0
+    },
+    {
+        "_id": "63eeb00624cc3ef806131288",
+        "title": "What is the output of this code ?",
+        "code": "```\nlet x = 10;\nlet y = (function () {\n  let x = 20;\n  return function (z) {\n    let x = 30;\n    return (function (x) {\n      let y = 40;\n      return (function () {\n        let x = 50;\n        return (function () {\n          let x = 60;\n          return (function () {\n            let x = 70;\n            return x + y + z + 10;\n          })() + x;\n        })() + x;\n      })() + x;\n    })(x + 20);\n  };\n})();\nlet add = y(80);\nconsole.log(add);\n```",
+        "answer": "360",
+        "options": [
+            "360",
+            "340",
+            "280",
+            "None of the above"
+        ],
+        "round": "63ec8e5b17ddbe8bf8ec7065",
+        "createdAt": "2023-02-16T22:36:54.318Z",
+        "updatedAt": "2023-02-16T22:36:54.318Z",
+        "__v": 0
+    },
+    {
+        "_id": "63efd3f2168aa7d8a692d617",
+        "title": "What will be the output of the following code?",
+        "code": "```\nconst res = ['1', '1a', '0', -1, true, false].map(Number).filter(Boolean);\nconsole.log(res);\n```",
+        "answer": "[1,-1,1]",
+        "options": [
+            "[1,1]",
+            "[1,-1,1]",
+            "[1,NaN,-1,1]",
+            "[1,true]"
+        ],
+        "round": "63ec8e5b17ddbe8bf8ec7065",
+        "createdAt": "2023-02-17T19:22:26.596Z",
+        "updatedAt": "2023-02-17T19:23:35.028Z",
+        "__v": 0
+    },
+    {
+        "_id": "63f1113962a98cf230f5a9ad",
+        "title": " What will be the output of the following Python code?",
+        "code": "```\nlistOfNumbers = [1, 2, 3, 4, 5]\nfinalResult = [i**2 for i in listOfNumbers if i % 2 == 0]\nprint(finalResult)\n```",
+        "answer": "[4, 16]",
+        "options": [
+            "[1, 4, 9, 16, 25]",
+            "[4, 16]",
+            "[1, 9, 25]",
+            "[2, 4, 6, 8, 10]"
+        ],
+        "round": "63ec8e5b17ddbe8bf8ec7065",
+        "createdAt": "2023-02-18T17:56:09.740Z",
+        "updatedAt": "2023-02-18T17:56:09.740Z",
+        "__v": 0
+    },
+    {
+        "_id": "63f1295701a2810795e91a09",
+        "title": "What is the type of the object that is assigned to the variable a in the following code?",
+        "code": "```\nfunctionExample1 = lambda y: y/y\nfunctionExample2 = functionExample1(5)\nprint(functionExample2)\n```",
+        "answer": "function object",
+        "options": [
+            "integer",
+            "float",
+            "string",
+            "function object"
+        ],
+        "round": "63ec8e5b17ddbe8bf8ec7065",
+        "createdAt": "2023-02-18T19:39:03.265Z",
+        "updatedAt": "2023-02-18T19:39:03.265Z",
+        "__v": 0
+    },
+    {
+        "_id": "63f1972e64041ff4135cb02c",
+        "title": "What will be the output of the following code?",
+        "code": "```\nconst object = {\n  field1: 1,\n  field2: {\n    field3: 2,\n    field4: {\n      field5: 3\n    }\n  }\n};\nconst newObj = Object.assign({}, object, {field2: {field4: {field5: 4}}});\nconsole.log(object.field2.field4.field5);\n```",
+        "answer": "3",
+        "options": [
+            "3",
+            "4",
+            "TypeError",
+            "ReferenceError"
+        ],
+        "round": "63ec8e5b17ddbe8bf8ec7065",
+        "createdAt": "2023-02-19T03:27:42.626Z",
+        "updatedAt": "2023-02-19T03:27:42.626Z",
+        "__v": 0
+    },
+    {
+        "_id": "63f1981264041ff4135cb02e",
+        "title": "What will be the output of the following code?",
+        "code": "```\nconst createdObject = {\n  key_1: {\n    key_2: {\n      key_3: 1\n    }\n  }\n};\nconst modifiedObject = { ...createdObject };\nmodifiedObject.key_1.key_2.key_3 = 2;\nconsole.log(createdObject.key_1.key_2.key_3);\n```",
+        "answer": "2",
+        "options": [
+            "1",
+            "2",
+            "TypeError",
+            "ReferenceError"
+        ],
+        "round": "63ec8e5b17ddbe8bf8ec7065",
+        "createdAt": "2023-02-19T03:31:30.008Z",
+        "updatedAt": "2023-02-19T03:31:30.008Z",
+        "__v": 0
+    },
+    {
+        "_id": "63f198b164041ff4135cb030",
+        "title": "What will be the output of the following code?",
+        "code": "```\nlet var_A = 10;\nlet var_B = 42;\n[var_A, var_B] = [var_B, var_A];\nconsole.log(var_A, var_B);\n```",
+        "answer": "42 10",
+        "options": [
+            "10 42",
+            "42 10",
+            "ReferenceError",
+            "TypeError"
+        ],
+        "round": "63ec8e5b17ddbe8bf8ec7065",
+        "createdAt": "2023-02-19T03:34:09.927Z",
+        "updatedAt": "2023-02-19T03:34:09.927Z",
+        "__v": 0
+    },
+    {
+        "_id": "63f199c98d15ab5e9db4b6f8",
+        "title": "What will be the output of the following code?",
+        "code": "```\nconst firstArray = [1, 2, 3];\nconst secondArray = [4, 5, 6];\nconst thirdArray = firstArray.concat(secondArray);\nconst fourthArray = thirdArray.slice(1, 5).map(eachElement => {\n  thirdArray.push(eachElement * 2);\n  return eachElement * 2;\n});\nconsole.log(thirdArray);\n```",
+        "answer": "[   1, 2, 3, 4,  5, 6, 4, 6, 8, 10 ]",
+        "options": [
+            "[   1, 2, 3, 4,  5, 6, 4, 6, 8, 10 ]",
+            "[2, 4, 6, 8, 10, 12]",
+            "[2, 3, 4, 5, 6, 8, 10, 12]",
+            "[4, 5, 6, 2, 4, 6, 8, 10, 12]"
+        ],
+        "round": "63ec8e5b17ddbe8bf8ec7065",
+        "createdAt": "2023-02-19T03:38:49.348Z",
+        "updatedAt": "2023-02-19T03:38:49.348Z",
+        "__v": 0
+    },
+    {
+        "_id": "63f19b1b8d15ab5e9db4b6fb",
+        "title": "What will be the output of the following C code?",
+        "code": "```\nconst newArray = [1, 2, 3];\nconst squaredArray = newArray.map(num => {\n  newArray.push(num * 2);\n  return num * 2;\n});\nconsole.log(newArray);\n```",
+        "answer": "[ 1, 2, 3, 2, 4, 6 ]",
+        "options": [
+            "[ 1, 2, 3, 2, 4, 6 ]",
+            "[1 2 3]",
+            "[1 3 4 5 6 7]",
+            "[1 4 6]"
+        ],
+        "round": "63ec8e5b17ddbe8bf8ec7065",
+        "createdAt": "2023-02-19T03:44:27.194Z",
+        "updatedAt": "2023-02-19T03:44:27.194Z",
+        "__v": 0
+    },
+    {
+        "_id": "63f19bb48d15ab5e9db4b6fd",
+        "title": "What will be the output of the following C code?",
+        "code": "```\n#include <stdio.h>\nint main() {\n    int counterVariable = 1;\n    while (counterVariable <= 10) {\n        if (counterVariable == 5) {\n            counterVariable += 2;\n            continue;\n        }\n        printf(\"%d \", counterVariable);\n        counterVariable++;\n    }\n    return 0;\n}\n```",
+        "answer": "1 2 3 4 7 8 9 10 ",
+        "options": [
+            "1 2 3 4 5 6 7 8 9 10",
+            "1 3 4 6 7 8 9 10",
+            "1 2 3 4 6 7 8 9 10",
+            "1 2 3 4 7 8 9 10"
+        ],
+        "round": "63ec8e5b17ddbe8bf8ec7065",
+        "createdAt": "2023-02-19T03:47:00.868Z",
+        "updatedAt": "2023-02-19T03:47:00.868Z",
+        "__v": 0
+    },
+    {
+        "_id": "63f1ab3a803e63932c514b46",
+        "title": "What is the bug in the following Java code that prevents it from producing the correct output?",
+        "code": "```\npublic class Example {\n    public static void main(String[] args) {\n        String[] words = {\"apple\", \"banana\", \"cherry\", \"date\"};\n        String[] newWords = new String[words.length];\n\n        for (int i = 0; i < words.length; i++) {\n            newWords[i] = words[words.length - 1 - i];\n        }\n\n        for (int i = 0; i < newWords.length; i++) {\n            System.out.println(newWords[i]);\n        }\n    }\n}\n```",
+        "answer": "The first for loop iterates through the \"words\" array in the wrong direction",
+        "options": [
+            "The variable \"words\" is not declared with the correct data type",
+            "The array \"newWords\" is not created with the correct length",
+            "The first for loop iterates through the \"words\" array in the wrong direction",
+            "The second for loop does not print out the correct values of \"newWords\"."
+        ],
+        "round": "63ec8e5b17ddbe8bf8ec7065",
+        "createdAt": "2023-02-19T04:53:14.886Z",
+        "updatedAt": "2023-02-19T04:53:14.886Z",
+        "__v": 0
+    }
+]

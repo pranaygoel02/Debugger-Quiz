@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
 // import { questionSet } from '../assets/questions/question'
-import questionSet from "../assets/questions/PrelimsTamal.json";
+import questionSet from "../assets/questions/DebuggerFinals.json";
 
 const ExamContext = React.createContext();
 
