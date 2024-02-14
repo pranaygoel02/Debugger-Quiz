@@ -1,9 +1,16 @@
 import React, { useEffect } from 'react'
 import { useExam } from '../context/examContext'
 import Timer from './Timer'
+import LoadingGif from '../assets/images/loading.gif'
 
 function SubmitModal({closeModal,submitQuiz}) {
-  const {timeLimit,timer} = useExam()
+  const {timeLimit,timer,submitting} = useExam()
+  if(submitting) return (
+    <div className='p-8 shadow-md rounded bg-white flex flex-col items-center gap-8 w-fit'>
+      <img className='w-[20%]' src={LoadingGif} />
+      <p className='text-lg font-semibold'>Hang on! Submitting quiz...</p>
+    </div>    
+  )
   return (
     <div className='p-8 shadow-md rounded bg-white flex flex-col items-center gap-8 w-max'>
         {timeLimit > 0 && timer ?

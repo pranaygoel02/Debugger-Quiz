@@ -1,6 +1,7 @@
 import React, { useContext, useState, useEffect } from "react";
 // import { questionSet } from '../assets/questions/question'
 import questionSet from "../assets/questions/DebuggerFinals.json";
+import { TIME_LIMIT } from "../constants";
 
 const ExamContext = React.createContext();
 
@@ -17,7 +18,8 @@ export const ExamProvider = ({ children }) => {
   const [unattempted, setUnattempted] = useState([]);
   const [result, setResult] = useState(false);
   const [questions, setQuestions] = useState(questionSet);
-  const [timeLimit, setTimeLimit] = useState(30 * 60 * 1000);
+  const [timeLimit, setTimeLimit] = useState(TIME_LIMIT);
+  const [submitting,setSubmitting] = useState(false);
 
   function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -27,18 +29,24 @@ export const ExamProvider = ({ children }) => {
     return array;
   }
 
+  const resetTimeLimit = () => {
+    setTimeLimit(TIME_LIMIT);
+  }
+
   useEffect(() => {
+    console.log(questionSet,questions);
     setQuestions(
       shuffleArray(
-        questionSet.map((item) => {
+        questionSet.map((item,index) => {
           return {
             ...item,
             options: item.options,
+            sl_no: index + 1
           };
         })
       )
     );
-  }, [questionSet]);
+  }, []);
 
   const value = {
     marks,
@@ -47,6 +55,7 @@ export const ExamProvider = ({ children }) => {
     setTimer,
     timeLimit,
     setTimeLimit,
+    resetTimeLimit,
     attempted,
     setAttempted,
     incorrect,
@@ -58,6 +67,8 @@ export const ExamProvider = ({ children }) => {
     result,
     setResult,
     questions,
+    submitting,
+    setSubmitting
   };
 
   return <ExamContext.Provider value={value}>{children}</ExamContext.Provider>;

@@ -13,6 +13,7 @@ import Timer from "./Timer";
 
 import BookmarkOutline from "../assets/images/bookmark_outline.png";
 import Bookmark from "../assets/images/bookmark.png";
+import { TIME_LIMIT } from "../constants";
 
 function Home() {
   const { user, setUser } = useUser();
@@ -27,6 +28,8 @@ function Home() {
     questions,
     timeLimit,
     timer,
+    setSubmitting,
+    resetTimeLimit
   } = useExam();
   const navigate = useNavigate();
 
@@ -132,7 +135,11 @@ function Home() {
     return false;
   };
 
-  const handleSubmitTest = () => {
+  const wait = async (time) => {
+    return new Promise((resolve) => setTimeout(resolve, time));
+  }
+
+  const handleSubmitTest = async () => {
     // console.log(checkTime());
     if (checkTime()) {
       alert("Time is up");
@@ -175,6 +182,34 @@ function Home() {
       `Debugger TeamId- ${user}`,
       JSON.stringify({ marks, attempted, unattempted, correct, incorrect })
     );
+    try {
+      setSubmitting(true);
+      await wait(3000)
+      const res = await fetch(`${process.env.REACT_APP_SERVER_URL}/result`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          user,
+          marks,
+          attempted,
+          unattempted,
+          correct,
+          incorrect,
+          timeTaken: TIME_LIMIT - timeLimit,
+        }),
+      })
+      const data = await res.json();
+      console.log(data);
+    }
+    catch(err) {
+      console.log(err);
+    }
+    finally {
+      setSubmitting(false)
+      resetTimeLimit()
+    }
     navigate("/result");
   };
 
